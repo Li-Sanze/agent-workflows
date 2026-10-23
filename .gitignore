@@ -16,6 +16,6 @@ __pycache__/
 node_modules/
 
 # Local agent runtime and working drafts
-.sopify/state/
+.sopify/
 .orca/
 .polish-loop/
