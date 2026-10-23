@@ -1,0 +1,21 @@
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Local credentials, dependencies, and generated files
+.env
+.env.*
+!.env.example
+*.log
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+
+# Local agent runtime and working drafts
+.sopify/state/
+.orca/
+.polish-loop/

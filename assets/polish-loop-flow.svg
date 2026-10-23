@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="740" viewBox="0 0 1000 740" role="img" aria-labelledby="diagram-title diagram-desc" data-generator="fireworks-tech-graph" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="flowchart" data-quality-profile="showcase" data-max-bends-per-edge="2" data-max-total-bends="8" data-min-node-gap="40" data-min-label-clearance="4" data-min-segment-length="16">
+  <title id="diagram-title">Polish Loop · 多轮反思与验收</title>
+  <desc id="diagram-desc">默认 3~8 轮 · 同宿主同模型 · 验收先于评分。预览未验证或审稿缺失时不计干净轮；需要用户决策时可在当前步骤暂停。</desc>
+  <defs>
+    <marker id="arrow-flow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+    <marker id="arrow-feedback" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#9333ea"/></marker>
+    <marker id="arrow-exception" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#64748b"/></marker>
+    <style>
+      text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+      .title { font-size: 28px; font-weight: 700; fill: #111827; }
+      .subtitle { font-size: 14px; fill: #475569; }
+      .node-title { font-size: 18px; font-weight: 600; fill: #111827; }
+      .node-sub { font-size: 13px; fill: #475569; }
+      .label, .legend { font-size: 12px; fill: #475569; }
+      .note { font-size: 13px; fill: #475569; }
+    </style>
+  </defs>
+  <rect width="1000" height="740" fill="#ffffff" data-graph-role="background"/>
+  <text x="500" y="50" text-anchor="middle" class="title">Polish Loop · 多轮反思与验收</text>
+  <text x="500" y="80" text-anchor="middle" class="subtitle">默认 3~8 轮 · 同宿主同模型 · 验收先于评分</text>
+  <path id="brief-draft" data-graph-role="edge" data-edge-id="brief-draft" data-source="brief" data-target="draft" data-flow="flow" d="M 230,170 L 290,170" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-flow)"/>
+  <path id="draft-critics" data-graph-role="edge" data-edge-id="draft-critics" data-source="draft" data-target="critics" data-flow="flow" d="M 470,170 L 530,170" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-flow)"/>
+  <path id="critics-verdict" data-graph-role="edge" data-edge-id="critics-verdict" data-source="critics" data-target="verdict" data-flow="flow" d="M 710,170 L 770,170" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-flow)"/>
+  <path id="verdict-gate" data-graph-role="edge" data-edge-id="verdict-gate" data-source="verdict" data-target="gate" data-flow="flow" d="M 860,210 L 860,310" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-flow)"/>
+  <path id="gate-rewrite" data-graph-role="edge" data-edge-id="gate-rewrite" data-source="gate" data-target="rewrite" data-flow="feedback" d="M 770,365 L 470,365" fill="none" stroke="#9333ea" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-feedback)"/>
+  <path id="rewrite-draft" data-graph-role="edge" data-edge-id="rewrite-draft" data-source="rewrite" data-target="draft" data-flow="feedback" d="M 380,325 L 380,210" fill="none" stroke="#9333ea" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-feedback)"/>
+  <path id="gate-delivery" data-graph-role="edge" data-edge-id="gate-delivery" data-source="gate" data-target="delivery" data-flow="flow" d="M 860,420 L 860,530" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-flow)"/>
+  <path id="gate-exception" data-graph-role="edge" data-edge-id="gate-exception" data-source="gate" data-target="exception" data-flow="exception" d="M 810,420 L 810,470 L 240,470 L 240,530" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-exception)" stroke-dasharray="6 5"/>
+  <g id="node-brief" data-graph-role="node" data-node-id="brief" data-graph-bounds="50,130,230,210">
+    <rect x="50" y="130" width="180" height="80" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="140.0" y="156" text-anchor="middle" class="node-title">立靶 brief</text>
+    <text x="140.0" y="178" text-anchor="middle" class="node-sub">目标与验收标准</text>
+    <text x="140.0" y="196" text-anchor="middle" class="node-sub">默认均为必达项</text>
+  </g>
+  <g id="node-draft" data-graph-role="node" data-node-id="draft" data-graph-bounds="290,130,470,210">
+    <rect x="290" y="130" width="180" height="80" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="380.0" y="156" text-anchor="middle" class="node-title">冻结产物 vk</text>
+    <text x="380.0" y="178" text-anchor="middle" class="node-sub">快照与版本预览</text>
+    <text x="380.0" y="196" text-anchor="middle" class="node-sub">准备本轮材料</text>
+  </g>
+  <g id="node-critics" data-graph-role="node" data-node-id="critics" data-graph-bounds="530,130,710,210">
+    <rect x="530" y="130" width="180" height="80" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="620.0" y="156" text-anchor="middle" class="node-title">四视角审稿</text>
+    <text x="620.0" y="178" text-anchor="middle" class="node-sub">读取产物与参考</text>
+    <text x="620.0" y="196" text-anchor="middle" class="node-sub">各自给出问题与证据</text>
+  </g>
+  <g id="node-verdict" data-graph-role="node" data-node-id="verdict" data-graph-bounds="770,130,950,210">
+    <rect x="770" y="130" width="180" height="80" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="860.0" y="156" text-anchor="middle" class="node-title">核实与裁决</text>
+    <text x="860.0" y="178" text-anchor="middle" class="node-sub">只针对当前版本</text>
+    <text x="860.0" y="196" text-anchor="middle" class="node-sub">视觉 / 技术分别判定</text>
+  </g>
+  <g id="node-rewrite" data-graph-role="node" data-node-id="rewrite" data-graph-bounds="290,325,470,405">
+    <rect x="290" y="325" width="180" height="80" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="380.0" y="351" text-anchor="middle" class="node-title">重写或回退</text>
+    <text x="380.0" y="373" text-anchor="middle" class="node-sub">生成 v(k+1)</text>
+    <text x="380.0" y="391" text-anchor="middle" class="node-sub">复核保留项</text>
+  </g>
+  <g id="node-gate" data-graph-role="node" data-node-id="gate" data-graph-bounds="770,310,950,420">
+    <rect x="770" y="310" width="180" height="110" rx="8" fill="#eff6ff" stroke="#d1d5db" stroke-width="1.5"/>
+    <rect x="775" y="315" width="170" height="100" rx="5" fill="none" stroke="#d1d5db"/>
+    <text x="860.0" y="336" text-anchor="middle" class="node-title">判停</text>
+    <text x="860.0" y="358" text-anchor="middle" class="node-sub">达到最少轮数</text>
+    <text x="860.0" y="376" text-anchor="middle" class="node-sub">四视角完整 · 验收通过</text>
+    <text x="860.0" y="394" text-anchor="middle" class="node-sub">连续两轮干净</text>
+  </g>
+  <g id="node-exception" data-graph-role="node" data-node-id="exception" data-graph-bounds="50,530,430,620">
+    <rect x="50" y="530" width="380" height="90" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="240.0" y="556" text-anchor="middle" class="node-title">上限 / 用户决策</text>
+    <text x="240.0" y="578" text-anchor="middle" class="node-sub">达到上限：报告真实验收与遗留</text>
+    <text x="240.0" y="596" text-anchor="middle" class="node-sub">需要决策：暂停，回答后从当前轮继续</text>
+  </g>
+  <g id="node-delivery" data-graph-role="node" data-node-id="delivery" data-graph-bounds="770,530,950,620">
+    <rect x="770" y="530" width="180" height="90" rx="8" fill="#eff6ff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="860.0" y="556" text-anchor="middle" class="node-title">交付</text>
+    <text x="860.0" y="578" text-anchor="middle" class="node-sub">合格版本与 final.md</text>
+    <text x="860.0" y="596" text-anchor="middle" class="node-sub">状态、改进与遗留</text>
+  </g>
+  <text x="840" y="272" text-anchor="end" class="label">核实结果</text>
+  <text x="620" y="350" text-anchor="middle" class="label">继续打磨</text>
+  <text x="360" y="272" text-anchor="end" class="label">下一版</text>
+  <text x="883" y="480" text-anchor="start" class="label">通过</text>
+  <text x="525" y="455" text-anchor="middle" class="label">上限 / 待决策</text>
+  <text x="50" y="652" class="note">预览未验证或审稿缺失时不计干净轮；需要用户决策时可在当前步骤暂停。</text>
+  <line x1="50" y1="692" x2="80" y2="692" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-flow)" data-graph-role="decoration"/>
+  <text x="92" y="696" class="legend">主流程</text>
+  <line x1="340" y1="692" x2="370" y2="692" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-feedback)" data-graph-role="decoration"/>
+  <text x="382" y="696" class="legend">重写与复审</text>
+  <line x1="650" y1="692" x2="680" y2="692" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-exception)" data-graph-role="decoration"/>
+  <text x="692" y="696" class="legend">上限或决策出口</text>
+  <text x="950" y="724" text-anchor="end" class="legend">Style 1 · Flat Icon</text>
+</svg>

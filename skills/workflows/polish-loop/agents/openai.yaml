@@ -1,0 +1,7 @@
+interface:
+  display_name: "Polish Loop"
+  short_description: "多轮写-审-改，用内部审计换质量"
+  default_prompt: "Use $polish-loop to draft, critique and rewrite this task over multiple isolated review rounds."
+
+policy:
+  allow_implicit_invocation: false

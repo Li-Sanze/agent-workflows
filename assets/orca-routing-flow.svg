@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="830" viewBox="0 0 1000 830" role="img" aria-labelledby="diagram-title diagram-desc" data-generator="fireworks-tech-graph" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="flowchart" data-quality-profile="showcase" data-max-bends-per-edge="2" data-max-total-bends="8" data-min-node-gap="40" data-min-label-clearance="4" data-min-segment-length="16">
+  <title id="diagram-title">Orca Agent Tab · 任务路由</title>
+  <desc id="diagram-desc">按 TUI 产品与任务归属分流 · 监督任务与完整移交分别收口。监督任务核对结果并结算资源；完整移交确认上下文送达与目标会话。</desc>
+  <defs>
+    <marker id="arrow-flow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+    <marker id="arrow-handoff" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d97706"/></marker>
+    <style>
+      text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+      .title { font-size: 28px; font-weight: 700; fill: #111827; }
+      .subtitle { font-size: 14px; fill: #475569; }
+      .node-title { font-size: 18px; font-weight: 600; fill: #111827; }
+      .node-sub { font-size: 13px; fill: #475569; }
+      .label, .legend { font-size: 12px; fill: #475569; }
+      .note { font-size: 13px; fill: #475569; }
+    </style>
+  </defs>
+  <rect width="1000" height="830" fill="#ffffff" data-graph-role="background"/>
+  <text x="500" y="50" text-anchor="middle" class="title">Orca Agent Tab · 任务路由</text>
+  <text x="500" y="80" text-anchor="middle" class="subtitle">按 TUI 产品与任务归属分流 · 监督任务与完整移交分别收口</text>
+  <path id="request-route" data-graph-role="edge" data-edge-id="request-route" data-source="request" data-target="route" data-flow="flow" d="M 500,195 L 500,250" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-flow)"/>
+  <path id="route-local" data-graph-role="edge" data-edge-id="route-local" data-source="route" data-target="local" data-flow="flow" d="M 440,340 L 440,390 L 170,390 L 170,440" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-flow)"/>
+  <path id="route-supervise" data-graph-role="edge" data-edge-id="route-supervise" data-source="route" data-target="supervise" data-flow="flow" d="M 500,340 L 500,440" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-flow)"/>
+  <path id="route-handoff" data-graph-role="edge" data-edge-id="route-handoff" data-source="route" data-target="handoff" data-flow="handoff" d="M 560,340 L 560,390 L 830,390 L 830,440" fill="none" stroke="#d97706" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-handoff)"/>
+  <path id="supervise-settle" data-graph-role="edge" data-edge-id="supervise-settle" data-source="supervise" data-target="settle" data-flow="flow" d="M 500,535 L 500,605" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-flow)"/>
+  <path id="handoff-transfer" data-graph-role="edge" data-edge-id="handoff-transfer" data-source="handoff" data-target="transfer" data-flow="handoff" d="M 830,535 L 830,605" fill="none" stroke="#d97706" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-handoff)"/>
+  <g id="node-request" data-graph-role="node" data-node-id="request" data-graph-bounds="390,125,610,195">
+    <rect x="390" y="125" width="220" height="70" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="500.0" y="151" text-anchor="middle" class="node-title">用户请求</text>
+    <text x="500.0" y="173" text-anchor="middle" class="node-sub">明确目标与任务归属</text>
+  </g>
+  <g id="node-route" data-graph-role="node" data-node-id="route" data-graph-bounds="390,250,610,340">
+    <rect x="390" y="250" width="220" height="90" rx="8" fill="#eff6ff" stroke="#d1d5db" stroke-width="1.5"/>
+    <rect x="395" y="255" width="210" height="80" rx="5" fill="none" stroke="#d1d5db"/>
+    <text x="500.0" y="276" text-anchor="middle" class="node-title">判断意图与目标 TUI</text>
+    <text x="500.0" y="298" text-anchor="middle" class="node-sub">换模型仍属同一产品</text>
+    <text x="500.0" y="316" text-anchor="middle" class="node-sub">点名其他 TUI 才跨产品</text>
+  </g>
+  <g id="node-local" data-graph-role="node" data-node-id="local" data-graph-bounds="50,440,290,535">
+    <rect x="50" y="440" width="240" height="95" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="170.0" y="466" text-anchor="middle" class="node-title">当前会话处理</text>
+    <text x="170.0" y="488" text-anchor="middle" class="node-sub">普通任务 / 同 TUI 换模型</text>
+    <text x="170.0" y="506" text-anchor="middle" class="node-sub">按原会话授权继续</text>
+  </g>
+  <g id="node-supervise" data-graph-role="node" data-node-id="supervise" data-graph-bounds="380,440,620,535">
+    <rect x="380" y="440" width="240" height="95" rx="8" fill="#eff6ff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="500.0" y="466" text-anchor="middle" class="node-title">监督任务</text>
+    <text x="500.0" y="488" text-anchor="middle" class="node-sub">Run → Task → Dispatch</text>
+    <text x="500.0" y="506" text-anchor="middle" class="node-sub">启动或复用目标 TUI</text>
+  </g>
+  <g id="node-handoff" data-graph-role="node" data-node-id="handoff" data-graph-bounds="710,440,950,535">
+    <rect x="710" y="440" width="240" height="95" rx="8" fill="#fff7ed" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="830.0" y="466" text-anchor="middle" class="node-title">完整移交</text>
+    <text x="830.0" y="488" text-anchor="middle" class="node-sub">启动或复用目标 TUI</text>
+    <text x="830.0" y="506" text-anchor="middle" class="node-sub">送达上下文并交出任务所有权</text>
+  </g>
+  <g id="node-settle" data-graph-role="node" data-node-id="settle" data-graph-bounds="380,605,620,705">
+    <rect x="380" y="605" width="240" height="100" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="500.0" y="631" text-anchor="middle" class="node-title">回传、核对与结算</text>
+    <text x="500.0" y="653" text-anchor="middle" class="node-sub">worker_done：结果与证据</text>
+    <text x="500.0" y="671" text-anchor="middle" class="node-sub">保留 / 释放资源后确认收件</text>
+  </g>
+  <g id="node-transfer" data-graph-role="node" data-node-id="transfer" data-graph-bounds="710,605,950,705">
+    <rect x="710" y="605" width="240" height="100" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="830.0" y="631" text-anchor="middle" class="node-title">目标会话接续</text>
+    <text x="830.0" y="653" text-anchor="middle" class="node-sub">交接送达后由对方负责</text>
+    <text x="830.0" y="671" text-anchor="middle" class="node-sub">原会话不等待执行结果</text>
+  </g>
+  <text x="275" y="375" text-anchor="middle" class="label">本会话 / 同 TUI</text>
+  <text x="520" y="414" text-anchor="start" class="label">需回传结果</text>
+  <text x="720" y="375" text-anchor="middle" class="label">交接后由对方接管</text>
+  <text x="520" y="577" text-anchor="start" class="label">执行并回传</text>
+  <text x="850" y="577" text-anchor="start" class="label">交接成功</text>
+  <text x="50" y="742" class="note">监督任务核对结果并结算资源；完整移交确认上下文送达与目标会话。</text>
+  <line x1="50" y1="782" x2="80" y2="782" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-flow)" data-graph-role="decoration"/>
+  <text x="92" y="786" class="legend">会话处理 / 监督流程</text>
+  <line x1="420" y1="782" x2="450" y2="782" stroke="#d97706" stroke-width="2" marker-end="url(#arrow-handoff)" data-graph-role="decoration"/>
+  <text x="462" y="786" class="legend">所有权移交</text>
+  <text x="950" y="814" text-anchor="end" class="legend">Style 1 · Flat Icon</text>
+</svg>
