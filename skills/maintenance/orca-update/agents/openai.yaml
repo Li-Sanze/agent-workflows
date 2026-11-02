@@ -1,0 +1,5 @@
+interface:
+  display_name: "Orca 与 AI 工具受控更新"
+  short_description: "受控更新 Orca 与已安装的 AI 命令行工具，保留原网络策略并分层验证"
+policy:
+  allow_implicit_invocation: true
