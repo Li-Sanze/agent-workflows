@@ -70,6 +70,8 @@
 
 加载 Skill 不会自动执行更新，也不会为宿主自行发起的更新增加后台验收。网络值、路径、账号及版本基线在执行时发现并留在本机；静态校验与真实升级验收分别记录。
 
+更新涉及已有 HUD／statusline 时，按需读取[既有显示集成的维护](skills/maintenance/orca-update/references/hud-statusline-maintenance.md)，关联适配器源码与原生协议，保留用户显示偏好并复用离线自检；安全降级与完整验收通过分别报告。
+
 ---
 
 ## 三、快速开始与本地安装 (Installation)
@@ -142,7 +144,8 @@ agent-workflows/
             ├── agents/
             │   └── openai.yaml
             └── references/
-                └── discovery-and-evidence.md
+                ├── discovery-and-evidence.md
+                └── hud-statusline-maintenance.md
 ```
 
 ### 贡献与新增技能规范
